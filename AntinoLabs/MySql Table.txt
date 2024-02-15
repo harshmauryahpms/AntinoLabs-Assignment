@@ -1,0 +1,13 @@
+create database antinolabs
+
+desc antinolabs
+
+create table posts (id int,posts varchar(100))
+
+select * from posts
+
+insert into posts values(1001,"Hi,Here is my blog 1.")
+insert into posts values(1002,"Hello,Here is my blog 2.")
+insert into posts values(1003,"Hi,Here is my blog 3.")
+
+select * from posts

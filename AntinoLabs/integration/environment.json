@@ -1,0 +1,15 @@
+{
+	"id": "b45ef032-f7af-4645-b674-9d7e68e000d0",
+	"name": "Blog-Posts",
+	"values": [
+		{
+			"key": "host",
+			"value": "localhost:8080",
+			"description": "",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-07-08T14:51:45.734Z",
+	"_postman_exported_using": "Postman/7.23.0"
+}

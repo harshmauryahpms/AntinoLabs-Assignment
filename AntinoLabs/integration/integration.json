@@ -1,0 +1,860 @@
+{
+	"info": {
+		"_postman_id": "8d1c2fb2-e10b-4d7b-bf98-c0a4fb83ed79",
+		"name": "Blog-Posts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+				{
+					"name": "Info Service",
+					"item": [
+								{
+									"name": "Get Request - Success",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en-US",
+												"type": "text"
+											},
+											{
+												"key": "clientId",
+												"value": "Default",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{host}}/v1/getblogpostsinfo?Id=1003",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"v1",
+												"getblogpostsinfo"
+											],
+											"query": [
+												{
+													"key": "Id",
+													"value": "1003"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Id - not an integer",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en-US",
+												"type": "text"
+											},
+											{
+												"key": "clientId",
+												"value": "Default",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{host}}/v1/getblogpostsinfo?Id=1003ABC",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"v1",
+												"getblogpostsinfo"
+											],
+											"query": [
+												{
+													"key": "Id",
+													"value": "1003ABC"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Id - negative value",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en-US",
+												"type": "text"
+											},
+											{
+												"key": "clientId",
+												"value": "Default",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{host}}/v1/getblogpostsinfo?Id=-1003",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"v1",
+												"getblogpostsinfo"
+											],
+											"query": [
+												{
+													"key": "Id",
+													"value": "-1003"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+				},
+				{
+					"name": "List Service",
+					"item": [
+						{
+							"name": "List Request - Success",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en-US",
+										"type": "text"
+									},
+									{
+										"key": "clientId",
+										"value": "Default",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{host}}/v1/listblogposts",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"listblogposts"
+									],
+									"query": []
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Maintain Service",
+					"item": [
+						{
+							"name": "CREATE Request- SUCCESS",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en-US",
+										"type": "text"
+									},
+									{
+										"key": "clientId",
+										"value": "Default",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"Id\": 1004,\r\n        \"BlogPost\": \"Hello Friends, This is my blog number 4.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/createblogposts",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"createblogposts"
+									],
+									"query": [
+										{
+											"key": "BlogPost",
+											"value": "Hello Friends, This is my blog number 4.",
+											"disabled":true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE Request- Bind Json error",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en-US",
+										"type": "text"
+									},
+									{
+										"key": "clientId",
+										"value": "Default",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"Id\": \"1004\",\r\n        \"BlogPost\": \"Hello Friends, This is my blog number 4.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/createblogposts",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"createblogposts"
+									],
+									"query": [
+										{
+											"key": "BlogPost",
+											"value": "Hello Friends, This is my blog number 4.",
+											"disabled":true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE Request- Invalid Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en-US",
+										"type": "text"
+									},
+									{
+										"key": "clientId",
+										"value": "Default",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"Id\": -1004,\r\n        \"BlogPost\": \"Hello Friends, This is my blog number 4.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/createblogposts",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"createblogposts"
+									],
+									"query": [
+										{
+											"key": "BlogPost",
+											"value": "Hello Friends, This is my blog number 4.",
+											"disabled":true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE Request- Missing Keys",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en-US",
+										"type": "text"
+									},
+									{
+										"key": "clientId",
+										"value": "Default",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/createblogposts",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"createblogposts"
+									],
+									"query": [
+										{
+											"key": "BlogPost",
+											"value": "Hello Friends, This is my blog number 4.",
+											"disabled":true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE Request- SUCCESS",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en-US",
+										"type": "text"
+									},
+									{
+										"key": "clientId",
+										"value": "Default",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"Id\": 1004,\r\n        \"BlogPost\": \"Hello My Friends, This is updated blog number 4.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}				
+								},
+								"url": {
+									"raw": "{{host}}/v1/updateblogposts",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"updateblogposts"
+									],
+									"query": [
+										{
+											"key": "BlogPost",
+											"value": "Hello My Friends, This is updated blog number 4.",
+											"disabled":true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE Request- Bind Json Error",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en-US",
+										"type": "text"
+									},
+									{
+										"key": "clientId",
+										"value": "Default",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"Id\": \"1004\",\r\n        \"BlogPost\": \"Hello Friends, This is my blog number 4.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/updateblogposts",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"updateblogposts"
+									],
+									"query": [
+										{
+											"key": "BlogPost",
+											"value": "Hello My Friends, This is updated blog number 4.",
+											"disabled":true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE Request- Invalid Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en-US",
+										"type": "text"
+									},
+									{
+										"key": "clientId",
+										"value": "Default",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"Id\": -1004,\r\n        \"BlogPost\": \"Hello My Friends, This is updated blog number 4.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/updateblogposts",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"updateblogposts"
+									],
+									"query": [
+										{
+											"key": "BlogPost",
+											"value": "Hello My Friends, This is updated blog number 4.",
+											"disabled":true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE Request- Missing Keys",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en-US",
+										"type": "text"
+									},
+									{
+										"key": "clientId",
+										"value": "Default",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/updateblogposts",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"updateblogposts"
+									],
+									"query": [
+										{
+											"key": "BlogPost",
+											"value": "Hello My Friends, This is updated blog number 4.",
+											"disabled":true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE Request- No data",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en-US",
+										"type": "text"
+									},
+									{
+										"key": "clientId",
+										"value": "Default",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"Id\": 10041666,\r\n        \"BlogPost\": \"Hello My Friends, This is updated blog number 4.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/updateblogposts",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"updateblogposts"
+									],
+									"query": [
+										{
+											"key": "BlogPost",
+											"value": "Hello My Friends, This is updated blog number 4.",
+											"disabled":true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Request- SUCCESS",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en-US",
+										"type": "text"
+									},
+									{
+										"key": "clientId",
+										"value": "Default",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"Id\": 1004 \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/deleteblogposts",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"deleteblogposts"
+									],
+									"query": [
+										{
+											"key": "BlogPost",
+											"value": "Hello My Friends, This is updated blog number 4.",
+											"disabled":true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Request- Bind Json Error",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en-US",
+										"type": "text"
+									},
+									{
+										"key": "clientId",
+										"value": "Default",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"Id\": \"1004\" \r\n }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/deleteblogposts",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"deleteblogposts"
+									],
+									"query": [
+										{
+											"key": "BlogPost",
+											"value": "Hello My Friends, This is updated blog number 4.",
+											"disabled":true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Request- Invalid Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en-US",
+										"type": "text"
+									},
+									{
+										"key": "clientId",
+										"value": "Default",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"Id\": -1004 \r\n }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/deleteblogposts",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"deleteblogposts"
+									],
+									"query": [
+										{
+											"key": "BlogPost",
+											"value": "Hello My Friends, This is updated blog number 4.",
+											"disabled":true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Request- Missing Keys",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en-US",
+										"type": "text"
+									},
+									{
+										"key": "clientId",
+										"value": "Default",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/deleteblogposts",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"deleteblogposts"
+									],
+									"query": [
+										{
+											"key": "BlogPost",
+											"value": "Hello My Friends, This is updated blog number 4.",
+											"disabled":true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Request- No data",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en-US",
+										"type": "text"
+									},
+									{
+										"key": "clientId",
+										"value": "Default",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"Id\": 10041666 \r\n }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/deleteblogposts",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"deleteblogposts"
+									],
+									"query": [
+										{
+											"key": "BlogPost",
+											"value": "Hello My Friends, This is updated blog number 4.",
+											"disabled":true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+	"protocolProfileBehavior": {}
+}
